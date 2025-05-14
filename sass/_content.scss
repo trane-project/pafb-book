@@ -4,8 +4,8 @@
   width: calc(100% - #{variables.$sidebar-width});
   height: 100%;
   overflow-y: auto;
-  color: #000;
-  background: #fff;
+  color: #461901;
+  background: #fffbeb;
   padding-bottom: 20px;
   transition: 0.5s;
 
@@ -25,6 +25,15 @@
   }
 
   &__content {
+    h1 {
+      font-size: 3em;
+      font-weight: normal;
+      font-style: italic;
+      text-align: center;
+      margin: 0;
+      margin-bottom: 0.5em;
+    }
+
     a {
       color: #357aba;
       text-decoration: none;

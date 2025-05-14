@@ -1,5 +1,12 @@
 {% extends "index.html" %}
 
+{% block title %} {{ section.title }} {% endblock title %}
+
+{% block meta %}
+    {{ super() }}
+    <meta name="description" content="{{ section.description | safe }}">
+{% endblock meta %}
+
 {% block content %}
     <h1>{{ section.title }}</h1>
     {{ section.content | safe }}
