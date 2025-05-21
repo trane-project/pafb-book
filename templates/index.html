@@ -10,6 +10,11 @@
         <link rel="canonical" href="{{current_url | safe}}">
 
         {% block meta %}
+            {% if config.description %}
+                <meta name="description" content="{{ config.description }}" />
+            {% elif section.description %}
+                <meta name="description" content="{{ section.description }}" />
+            {% endif %}
         {% endblock meta %}
 
         <title>
