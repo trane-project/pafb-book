@@ -3,10 +3,7 @@
 {% block title %} {{ page.title }} {% endblock title %}
 
 {% block meta %}
-    {{ super() }}
     <meta name="description" content="{{ page.description | safe }}">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="{{current_url | safe}}">
 {% endblock meta %}
 
 {% block content %}
