@@ -69,7 +69,8 @@
     top: calc((100% - 1px) / 2);
     width: 20px;
     height: 2px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #461901;
+    color: #461901;
 
     &:nth-child(1) {
       transform: translateY(6px) rotate(0deg);
