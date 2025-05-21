@@ -8,11 +8,13 @@
         <link rel="icon" href="{{ get_url(path="favicon.ico") | safe  }}" type="image/x-icon">
 
         {% block meta %}
-        {% if config.description %}
-            <meta name="description" content="{{ config.description }}" />
-        {% elif section.description %}
-            <meta name="description" content="{{ section.description }}" />
-        {% endif %}
+            {% if config.description %}
+                <meta name="description" content="{{ config.description }}" />
+            {% elif section.description %}
+                <meta name="description" content="{{ section.description }}" />
+            {% endif %}
+            <meta name="robots" content="index, follow">
+            <link rel="canonical" href="{{current_url | safe}}">
         {% endblock meta %}
 
         <title>

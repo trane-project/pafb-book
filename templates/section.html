@@ -3,7 +3,6 @@
 {% block title %} {{ section.title }} {% endblock title %}
 
 {% block meta %}
-    {{ super() }}
     <meta name="description" content="{{ section.description | safe }}">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="{{current_url | safe}}">
