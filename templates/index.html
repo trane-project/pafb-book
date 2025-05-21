@@ -9,7 +9,7 @@
         <meta name="robots" content="index, follow">
 
         {% block meta %}
-            <link rel="canonical" href="{{current_url ~ "home" | safe}}">
+            <link rel="canonical" href="{{current_url ~ "home/" | safe}}">
             {% if config.description %}
                 <meta name="description" content="{{ config.description }}" />
             {% elif section.description %}
