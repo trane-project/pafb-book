@@ -15,12 +15,19 @@
         {% endif %}
         {% endblock meta %}
 
-        <title>{% block title %} {% if section.title %} {{ section.title }} {% endif %} {% endblock title %} </title>
+        <title>
+            {% block title %}
+                {% if config.title %}
+                    {{ config.title }}
+                {% elif section.title %}
+                    {{ section.title }}
+                {% endif %}
+            {% endblock title %}
+        </title>
 
       {% block js %}
       {% endblock js %}
 
-      <!-- CSS -->
       {% block css %}
       <link rel="stylesheet" href="{{ get_url(path="book.css") | safe }}">
       {% endblock css %}
