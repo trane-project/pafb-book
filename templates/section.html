@@ -3,6 +3,7 @@
 {% block title %} {{ section.title }} {% endblock title %}
 
 {% block meta %}
+    <link rel="canonical" href="{{current_url | safe}}">
     <meta name="description" content="{{ section.description | safe }}">
 {% endblock meta %}
 
