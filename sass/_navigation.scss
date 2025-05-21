@@ -4,7 +4,7 @@
   position: absolute;
   left: 0;
   overflow-y: auto;
-  width: 300px;
+  width: #{variables.$sidebar-width};
   color: #461901;
   background: #fffbeb;
   border-right: 1px solid rgba(0, 0, 0, 0.07);
@@ -14,10 +14,11 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    font-size: 1.75rem;
 
     a {
       display: block;
-      color: #364149;
+      color: #461901;
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
@@ -27,6 +28,7 @@
       &:hover {
         text-decoration: underline;
       }
+      border-bottom: 1px solid #461901
     }
 
     li.active > a {
@@ -36,6 +38,11 @@
 
     ul {
       padding-left: 20px;
+    }
+
+    ul a {
+      font-size: 1.5rem;
+      border-bottom: 0;
     }
   }
 }
