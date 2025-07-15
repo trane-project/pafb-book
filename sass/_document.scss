@@ -4,18 +4,21 @@
   src: url('./fonts/Spectral-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Spectral';
   src: url('./fonts/Spectral-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Spectral';
   src: url('./fonts/Spectral-Italic.ttf') format('truetype');
   font-weight: normal;
   font-style: italic;
+  font-display: swap;
 }
 
 /* Center images and graphs*/
@@ -67,6 +70,6 @@ body, html {
 
 body {
   text-rendering: optimizeLegibility;
-  font-family: "Spectral", sans-serif;
+  font-family: "Spectral", serif, sans-serif;
   letter-spacing: 0.2px;
 }
