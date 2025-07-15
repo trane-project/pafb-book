@@ -31,8 +31,7 @@
       {% endblock js %}
 
       {% block css %}
-        <link rel="preload" as="style" href="{{ get_url(path="book.css") | safe }}" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="{{ get_url(path="book.css") | safe }}"></noscript>
+      <link rel="stylesheet" href="{{ get_url(path="book.css") | safe }}">
       {% endblock css %}
 
       {% block extra_head %}
