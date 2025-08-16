@@ -215,6 +215,7 @@ if (document.readyState === "complete" ||
     (document.readyState !== "loading" && !document.documentElement.doScroll)
 ) {
   initToggleMenu();
+  initSearch();
 } else {
   document.addEventListener("DOMContentLoaded", function () {
     initToggleMenu();
