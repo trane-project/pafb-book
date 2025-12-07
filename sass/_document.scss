@@ -5,6 +5,8 @@
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+  aspect-ratio: 1 / 1; 
+  object-fit: cover;
 }
 .graph {
   display: block;
