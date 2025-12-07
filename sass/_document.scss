@@ -78,6 +78,14 @@
   color: #555555;
 }
 
+.footer-faq summary {
+  cursor: pointer;
+  padding: 0.5em 1em;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
 /* Increase font of sidebar */
 .chapter li a {
   font-size: 1em;
