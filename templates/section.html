@@ -8,6 +8,10 @@
 {% endblock meta %}
 
 {% block content %}
-    <h1>{{ section.title }}</h1>
+    {% if section.extra.short_title %}
+        <h1>{{ section.extra.short_title }}</h1>
+    {% else %}
+        <h1>{{ section.title }}</h1>
+    {% endif %}
     {{ section.content | safe }}
 {% endblock content %}
