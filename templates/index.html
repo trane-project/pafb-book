@@ -121,40 +121,42 @@
             {% endblock after_menu %}
         </div>
 
-        <div class="page">
-            <div class="page__header">
-                <div class="menu-icon">
-                    <span>&nbsp;</span>
-                    <span>&nbsp;</span>
-                    <span>&nbsp;</span>
+        <main>
+            <div class="page">
+                <div class="page__header">
+                    <div class="menu-icon">
+                        <span>&nbsp;</span>
+                        <span>&nbsp;</span>
+                        <span>&nbsp;</span>
+                    </div>
+                    {% if config.build_search_index %}
+                        <span class="search-icon">🔎</span>
+                    {% endif %}
                 </div>
-                {% if config.build_search_index %}
-                <span class="search-icon">🔎</span>
-                {% endif %}
-            </div>
 
-            <div class="page__content">
-                {% if config.build_search_index %}
-                <div class="search-container">
-                    <input id="search" type="search" placeholder="Search..">
-                    <div class="search-results">
-                        <div class="search-results__header"></div>
-                        <ul class="search-results__items"></ul>
+                <div class="page__content">
+                    {% if config.build_search_index %}
+                        <div class="search-container">
+                            <input id="search" type="search" placeholder="Search..">
+                            <div class="search-results">
+                                <div class="search-results__header"></div>
+                                <ul class="search-results__items"></ul>
+                            </div>
+                        </div>
+                    {% endif %}
+                    <div class="book-content">
+                        {% block content %}
+                            {% if section.extra.short_title %}
+                                <h1>{{ section.extra.short_title }}</h1>
+                            {% else %}
+                                <h1>{{ section.title }}</h1>
+                            {% endif %}
+                            {{ section.content | safe }}
+                        {% endblock content %}
                     </div>
                 </div>
-                {% endif %}
-                <div class="book-content">
-                    {% block content %}
-                        {% if section.extra.short_title %}
-                            <h1>{{ section.extra.short_title }}</h1>
-                        {% else %}
-                            <h1>{{ section.title }}</h1>
-                        {% endif %}
-                        {{ section.content | safe }}
-                    {% endblock content %}
-                </div>
             </div>
-        </div>
+        </main>
 
         {% block js_body %}
             {% if config.build_search_index %}
