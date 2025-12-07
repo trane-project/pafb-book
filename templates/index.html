@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="{{ get_url(path="favicon.ico") | safe  }}" type="image/x-icon">
+        <link rel="icon" href="{{ get_url(path="favicon.ico", cachebust=true) | safe  }}" type="image/x-icon">
         <meta name="robots" content="index, follow">
 
         {% block meta %}
@@ -35,12 +35,12 @@
             <style> {{critical_css | safe}} </style>
         
             <link rel="stylesheet"
-                href="{{ get_url(path="book.css") | safe }}"
+                href="{{ get_url(path="book.css", cachebust=true) | safe }}"
                 media="print"
                 onload="this.media='all'">
         
             <noscript>
-                <link rel="stylesheet" href="{{ get_url(path="book.css") | safe }}">
+                <link rel="stylesheet" href="{{ get_url(path="book.css", cachebust=true) | safe }}">
             </noscript>
         {% endblock css %}
 
@@ -148,10 +148,10 @@
 
         {% block js_body %}
             {% if config.build_search_index %}
-            <script defer type="text/javascript" src="{{ get_url(path="elasticlunr.min.js") | safe }}"></script>
-            <script defer type="text/javascript" src="{{ get_url(path="search_index.en.js") | safe }}"></script>
+            <script defer type="text/javascript" src="{{ get_url(path="elasticlunr.min.js", cachebust=true) | safe }}"></script>
+            <script defer type="text/javascript" src="{{ get_url(path="search_index.en.js", cachebust=true) | safe }}"></script>
             {% endif %}
-            <script defer type="text/javascript" src="{{ get_url(path="book.js") | safe }}"></script>
+            <script defer type="text/javascript" src="{{ get_url(path="book.js", cachebust=true) | safe }}"></script>
         {% endblock js_body %}
     </body>
 
