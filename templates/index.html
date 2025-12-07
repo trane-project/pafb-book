@@ -6,9 +6,17 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="{{ get_url(path="favicon.ico", cachebust=true) | safe  }}" type="image/x-icon">
-        <link rel="stylesheet" href="{{ get_url(path="lite-yt-embed.css", cachebust=true) | safe }}" />
-        <script src="{{ get_url(path="lite-yt-embed.js", cachebust=true) | safe }}"></script>
         <meta name="robots" content="index, follow">
+
+        <!-- Lite YouTube Embed -->
+        <link rel="stylesheet"
+            href="{{ get_url(path="lite-yt-embed.css", cachebust=true) | safe }}"
+            media="print"
+            onload="this.media='all'">
+        <noscript>
+            <link rel="stylesheet" href="{{ get_url(path="lite-yt-embed.css", cachebust=true) | safe }}">
+        </noscript>
+        <script src="{{ get_url(path="lite-yt-embed.js", cachebust=true) | safe }}" defer></script>
 
         {% block meta %}
             <link rel="canonical" href="{{current_url ~ "home/" | safe}}">
