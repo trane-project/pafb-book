@@ -82,8 +82,8 @@
                                 {% if config.extra.book_number_chapters %}
                                     <strong>{{ chapter_num }}.</strong>
                                 {% endif %}
-                                {% if menu_section.extra.short_title %}
-                                    {{ menu_section.extra.short_title }}
+                                {% if menu_section.extra.alt_title %}
+                                    {{ menu_section.extra.alt_title }}
                                 {% else %}
                                     {{ menu_section.title }}
                                 {% endif %}
@@ -101,8 +101,8 @@
                                         {% if config.extra.book_number_chapters %}
                                             <strong>{{ chapter_num }}.{{ loop.index }}.</strong>
                                         {% endif %}
-                                        {% if page.extra.short_title %}
-                                            {{ page.extra.short_title }}
+                                        {% if page.extra.alt_title %}
+                                            {{ page.extra.alt_title }}
                                         {% else %}
                                             {{ page.title }}
                                         {% endif %}
@@ -146,8 +146,8 @@
                     {% endif %}
                     <div class="book-content">
                         {% block content %}
-                            {% if section.extra.short_title %}
-                                <h1>{{ section.extra.short_title }}</h1>
+                            {% if section.extra.alt_title %}
+                                <h1>{{ section.extra.alt_title }}</h1>
                             {% else %}
                                 <h1>{{ section.title }}</h1>
                             {% endif %}
