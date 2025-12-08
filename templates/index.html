@@ -68,31 +68,31 @@
                     {% block menu %}
                     {% set menu_data = load_data(path="content/menu.yaml") %}
                     {% for i in menu_data %}
-                        {% set section = get_section(path=i.section ~ "/_index.md") %}
+                        {% set menu_section = get_section(path=i.section ~ "/_index.md") %}
                        
                         {# Determine if this is the current subsection or if a page within it is active #}
                         {% set is_active = false %}
-                        {% if current_path == section.path %}
+                        {% if current_path == menu_section.path %}
                             {% set is_active = true %}
                         {% endif %}
 
                         <li {% if is_active %}class="active"{% endif %}>
                             {% set chapter_num = loop.index %}
-                            <a href="{{ section.permalink | safe }}">
+                            <a href="{{ menu_section.permalink | safe }}">
                                 {% if config.extra.book_number_chapters %}
                                     <strong>{{ chapter_num }}.</strong>
                                 {% endif %}
-                                {% if section.extra.short_title %}
-                                    {{ section.extra.short_title }}
+                                {% if menu_section.extra.short_title %}
+                                    {{ menu_section.extra.short_title }}
                                 {% else %}
-                                    {{ section.title }}
+                                    {{ menu_section.title }}
                                 {% endif %}
                             </a>
 
-                            {% if section.pages and (
+                            {% if menu_section.pages and (
                                 not config.extra.book_only_current_section_pages or
-                                current_path == section.path or
-                                section.pages | filter(attribute="path", value=current_path) | length > 0) %}
+                                current_path == menu_section.path or
+                                menu_section.pages | filter(attribute="path", value=current_path) | length > 0) %}
                                 <ul>
                                 {% for p in i.pages %}
                                     {% set page = get_page(path=i.section ~ "/" ~ p ~ ".md") %}
