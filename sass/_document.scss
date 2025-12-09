@@ -79,17 +79,18 @@ a.license-button {
   margin-bottom: 2em;
 }
 
-/* FAQ footer for SEO purposes */
-.footer-faq {
+/* FAQ section for SEO purposes */
+.faq {
+  margin: 2em 0;
   font-size: 0.95em;
   color: #555555;
-}
-.footer-faq summary {
-  cursor: pointer;
-  padding: 0.5em 1em;
   border: 1px solid #ddd;
   border-radius: 6px;
   transition: background 0.2s;
+}
+.faq summary {
+  cursor: pointer;
+  padding: 0.5em 1em;
 }
 
 /* Increase font of sidebar */
