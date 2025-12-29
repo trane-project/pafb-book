@@ -89,7 +89,7 @@
                                 {% endif %}
                             </a>
 
-                            {% if menu_section.pages and (
+                            {% if i.pages and (
                                 not config.extra.book_only_current_section_pages or
                                 current_path == menu_section.path or
                                 menu_section.pages | filter(attribute="path", value=current_path) | length > 0) %}

@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+
+{% block title %} {{ page.title }} {% endblock title %}
+
+{% block meta %}
+    <link rel="canonical" href="{{current_url | safe}}">
+    <meta name="description" content="{{ page.description | safe }}">
+{% endblock meta %}
+
+{% block content %}
+    {% if page.extra.alt_title %}
+        <h1>{{ page.extra.alt_title }}</h1>
+    {% else %}
+        <h1>{{ page.title }}</h1>
+    {% endif %}
+
+    {% set parent_section_path = page.ancestors | last %}
+    {% if parent_section_path %}
+        {% set parent_section = get_section(path=parent_section_path) %}
+        <p><a href="{{ parent_section.permalink | safe }}">Back to Blog Section</a></p>
+    {% endif %}
+
+    {{ page.content | safe }}
+{% endblock content %}

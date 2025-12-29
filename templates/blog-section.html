@@ -1,0 +1,47 @@
+{% extends "index.html" %}
+
+{% block title %} {{ section.title }} {% endblock title %}
+
+{% block meta %}
+    <link rel="canonical" href="{{current_url | safe}}">
+    <meta name="description" content="{{ section.description | safe }}">
+{% endblock meta %}
+
+{% block content %}
+    {% if section.extra.alt_title %}
+        <h1>{{ section.extra.alt_title }}</h1>
+    {% else %}
+        <h1>{{ section.title }}</h1>
+    {% endif %}
+
+    {% set parent_section_path = section.ancestors | last %}
+    {% if parent_section_path %}
+        {% set parent_section = get_section(path=parent_section_path) %}
+        <p><a href="{{ parent_section.permalink | safe }}">Back to Blog Home</a></p>
+    {% endif %}
+
+    {{ section.content | safe }}
+    
+    {% set posts = section.pages | reverse %}
+    {% if posts | length > 0 %}
+        <div class="posts-list">
+            <ul>
+            {% for post in posts %}
+                <li>
+                <article class="post-summary">
+                    <b> <a href="{{ post.permalink | safe }}">{{ post.title }}</a> </b>
+                    {% if post.date %}
+                        - <time datetime="{{ post.date | date(format="%Y-%m-%d") }}">{{ post.date | date(format="%b %d, %Y") }}</time>
+                    {% endif %}
+                    {% if post.summary %}
+                        <p>{{ post.summary | safe }}</p>
+                    {% endif %}
+                </article>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    {% else %}
+        <p>No posts yet.</p>
+    {% endif %}
+{% endblock content %}
