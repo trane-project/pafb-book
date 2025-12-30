@@ -17,12 +17,12 @@
     {% set parent_section_path = section.ancestors | last %}
     {% if parent_section_path %}
         {% set parent_section = get_section(path=parent_section_path) %}
-        <p><a href="{{ parent_section.permalink | safe }}">Back to Blog Home</a></p>
+        <p><a href="{{ parent_section.permalink | safe }}">← Back to blog home</a></p>
     {% endif %}
 
     {{ section.content | safe }}
     
-    {% set posts = section.pages | reverse %}
+    {% set posts = section.pages | sort(attribute="date", reverse=true) %}
     {% if posts | length > 0 %}
         <div class="posts-list">
             <ul>
@@ -31,10 +31,14 @@
                 <article class="post-summary">
                     <b> <a href="{{ post.permalink | safe }}">{{ post.title }}</a> </b>
                     {% if post.date %}
-                        - <time datetime="{{ post.date | date(format="%Y-%m-%d") }}">{{ post.date | date(format="%b %d, %Y") }}</time>
+                        - <time datetime="{{ post.date | date(format="%Y-%m-%d") }}">
+                            {{ post.date | date(format="%b %d, %Y") }}
+                        </time>
                     {% endif %}
-                    {% if post.summary %}
-                        <p>{{ post.summary | safe }}</p>
+                    {% if post.description %}
+                        <ul>
+                            <li>{{ post.description | safe }}</li>
+                        </ul>
                     {% endif %}
                 </article>
                 </li>

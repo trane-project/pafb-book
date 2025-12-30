@@ -17,7 +17,15 @@
     {% set parent_section_path = page.ancestors | last %}
     {% if parent_section_path %}
         {% set parent_section = get_section(path=parent_section_path) %}
-        <p><a href="{{ parent_section.permalink | safe }}">Back to Blog Section</a></p>
+        <p><a href="{{ parent_section.permalink | safe }}">← Back to blog section</a></p>
+    {% endif %}
+
+    {% if page.date %}
+        <p> <i> Published on
+            <time datetime="{{ page.date | date(format="%Y-%m-%d") }}">
+                {{ page.date | date(format="%b %d, %Y") }}
+            </time>
+        </i> </p>
     {% endif %}
 
     {{ page.content | safe }}
