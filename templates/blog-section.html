@@ -22,7 +22,7 @@
 
     {{ section.content | safe }}
     
-    {% set posts = section.pages | sort(attribute="date", reverse=true) %}
+    {% set posts = section.pages | sort(attribute="date") | reverse %}
     {% if posts | length > 0 %}
         <div class="posts-list">
             <ul>
