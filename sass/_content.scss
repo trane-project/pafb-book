@@ -3,6 +3,7 @@
   position: absolute;
   width: calc(100% - #{variables.$sidebar-width});
   height: 100%;
+  overflow-x: hidden;
   overflow-y: auto;
   color: #461901;
   background: #fffbeb;
