@@ -1,0 +1,80 @@
+.visual-guide {
+  margin: 1.5rem 0 2.5rem;
+  border: 1px solid rgba(70, 25, 1, 0.25);
+  border-radius: 0.6rem;
+  color: #461901;
+  background: #fffbeb;
+}
+
+.visual-guide > summary {
+  padding: 1rem 1.2rem;
+  font-weight: bold;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.visual-guide[open] > summary {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(70, 25, 1, 0.25);
+}
+
+.visual-guide-tabs {
+  display: flex;
+  gap: 0.4rem;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 0 0.8rem;
+}
+
+.visual-guide-tabs a {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid rgba(70, 25, 1, 0.25);
+  border-radius: 0.4rem;
+  color: #461901;
+  background: #fef3c7;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.visual-guide-tabs a:hover {
+  background: #fde68a;
+}
+
+.visual-guide-tabs a[aria-selected="true"] {
+  color: #fffbeb;
+  background: #92400e;
+  border-color: #92400e;
+}
+
+.visual-guide summary:focus-visible,
+.visual-guide a:focus-visible,
+.visual-guide-panel:focus-visible {
+  outline: 2px solid #193bb9;
+  outline-offset: 3px;
+}
+
+.visual-guide-panel {
+  padding: 0 0.8rem;
+}
+
+.visual-guide-panel[hidden] {
+  display: none;
+}
+
+.visual-guide-figure {
+  width: 560px;
+  max-width: 100%;
+  margin: 0 auto 1.2rem;
+}
+
+.visual-guide-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

@@ -8,6 +8,7 @@
 @use "content";
 @use "header";
 @use "fonts";
+@use "guides";
 
 @use "syntax" as syntax;
 @include syntax.light;

@@ -1,0 +1,6 @@
+{% extends "page.html" %}
+
+{% block extra_head %}
+    {{ super() }}
+    <script src="{{ get_url(path="guides.js", cachebust=true) | safe }}" defer></script>
+{% endblock extra_head %}
